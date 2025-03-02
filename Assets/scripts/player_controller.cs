@@ -3,7 +3,7 @@ using UnityEngine;
 // This script handles controlling the player movement
 public class PlayerController : MonoBehaviour
 {
-    // A reference to the Sprite Renderer componenet, holding the player image
+    // A reference to the Sprite Renderer component, holding the player image
     public SpriteRenderer playerImage;
 
     public float moveSpeed = 5f;
@@ -11,15 +11,20 @@ public class PlayerController : MonoBehaviour
     // Reference to the main camera that we see the game world through
     private Camera mainCamera;
 
-    // Half the width of the player's character image
+    // Half the width and height of the player's character image
     private float playerHalfWidth;
+    private float playerHalfHeight;
 
-    // The game screen's right and left edges, used to block the player from going outside screen boundaries
+    // The game screen's edges, used to block the player from going outside screen boundaries
     private float rightScreenEdge;
     private float leftScreenEdge;
+    private float topScreenEdge;
+    private float bottomScreenEdge;
 
     private float maxPosX;
     private float minPosX;
+    private float maxPosY;
+    private float minPosY;
 
     // Start is called before the first frame update
     void Start()
@@ -32,48 +37,40 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Save the player input as GetAxis to tell which direction is pressed for the Horizontal key mapping (left/right)
+        // Get player input for horizontal and vertical movement
         float inputHl = Input.GetAxis("Horizontal");
+        float inputVl = Input.GetAxis("Vertical");
 
-        // Save the players position at this moment in time
+        // Save the player's position at this moment in time
         Vector2 currentPos = gameObject.transform.position;
 
-        // Check if the player pressed right direction (inputHl will be greater than 0)
-        // AND also if the player's current position is still behind (x is less than) the maximum possible X position (the far right)
-        if ((inputHl > 0) && (currentPos.x <= maxPosX))
-        {
-            // Calculate the player's new position by adding 1 unit to the right of the player's current position
-            Vector2 newPos = currentPos + Vector2.right;
+        // Calculate the new position based on input, factoring in speed and frame time
+        Vector2 newPos = currentPos + new Vector2(inputHl, inputVl) * moveSpeed * Time.deltaTime;
 
-            // Apply the new position to the player's position property in the transform componenet
-            // **Don't forget to multiplty the speed by Time.deltaTime to account for different computer hardware
-            gameObject.transform.position = Vector2.MoveTowards(currentPos, newPos, moveSpeed * Time.deltaTime);
-        }
-        // Do the same as above, but mirrored for the left direction (note the opposite less than/greater than checks)
-        else if (inputHl < 0 && (currentPos.x >= minPosX))
-        {
-            Vector2 newPos = currentPos + Vector2.left;
+        // Clamp the new position to keep the player within screen boundaries
+        newPos.x = Mathf.Clamp(newPos.x, minPosX, maxPosX);
+        newPos.y = Mathf.Clamp(newPos.y, minPosY, maxPosY);
 
-            gameObject.transform.position = Vector2.MoveTowards(currentPos, newPos, moveSpeed * Time.deltaTime);
-        }
+        // Move the player to the new position
+        gameObject.transform.position = Vector2.MoveTowards(currentPos, newPos, moveSpeed * Time.deltaTime);
     }
 
     void SetupScreenEdges()
     {
-        // Calculate the half-width from the player's image boundaries along the horizontal x-axis. The bounds are the total width so we split them in 2
+        // Get the player's half width and half height
         playerHalfWidth = playerImage.bounds.size.x * 0.5f;
+        playerHalfHeight = playerImage.bounds.size.y * 0.5f;
 
-        // Get the right-most point on the game screen which is its width (as 'mainCamera.pixelWidth'),
-        // and project that point from the screen to the game world (using 'ScreenToWorldPoint' function from the main camera).
-        // This gives us that same point's coordinates, but inside the game world where game objects also live and move
+        // Get the screen edges in world coordinates
         rightScreenEdge = mainCamera.ScreenToWorldPoint(new Vector2(mainCamera.pixelWidth, 0)).x;
-
-        // Do the same for the left-most point on the game screen, which happens to be 0 on the screen
         leftScreenEdge = mainCamera.ScreenToWorldPoint(Vector2.zero).x;
+        topScreenEdge = mainCamera.ScreenToWorldPoint(new Vector2(0, mainCamera.pixelHeight)).y;
+        bottomScreenEdge = mainCamera.ScreenToWorldPoint(Vector2.zero).y;
 
-        // Calculate the maximum and minimum possible X values for the players position along the X-axis
-        // Taking into account the player's own width so it stays completely on screen
+        // Calculate the maximum and minimum possible values for the player's position
         maxPosX = rightScreenEdge - playerHalfWidth;
         minPosX = leftScreenEdge + playerHalfWidth;
+        maxPosY = topScreenEdge - playerHalfHeight;
+        minPosY = bottomScreenEdge + playerHalfHeight;
     }
 }
