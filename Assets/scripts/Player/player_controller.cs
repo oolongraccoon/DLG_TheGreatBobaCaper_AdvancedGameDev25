@@ -42,10 +42,11 @@ public class PlayerController : MonoBehaviour
         float inputVl = Input.GetAxis("Vertical");
 
         // Save the player's position at this moment in time
-        Vector2 currentPos = gameObject.transform.position;
+        Vector2 currentPos = transform.position;
 
         // Calculate the new position based on input, factoring in speed and frame time
-        Vector2 newPos = currentPos + new Vector2(inputHl, inputVl) * moveSpeed * Time.deltaTime;
+        Vector2 newPos = currentPos + new Vector2(inputHl, 0) * moveSpeed * Time.deltaTime;
+
 
         // Clamp the new position to keep the player within screen boundaries
         newPos.x = Mathf.Clamp(newPos.x, minPosX, maxPosX);
