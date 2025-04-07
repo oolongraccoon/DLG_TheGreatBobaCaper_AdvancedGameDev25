@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class Boba : MonoBehaviour, IItem
 {
-    public void Collect()
+    public ItemData itemData;
+
+    public ItemData Collect()
     {
         Destroy(gameObject);
+        return itemData;
     }
 }
