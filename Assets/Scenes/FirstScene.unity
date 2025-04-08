@@ -677,7 +677,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 8751025702534669518}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572275232}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1002,6 +1002,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: itemData
+      value: 
+      objectReference: {fileID: 11400000, guid: a0f9f8c570c13814f9841eb88bc22e70, type: 2}
     - target: {fileID: 6722165935455833458, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
       propertyPath: m_Name
       value: Boba (1)
@@ -1325,6 +1329,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: itemData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c241e1d87c47304c83cb62d93ef08d7, type: 2}
     - target: {fileID: 6722165935455833458, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
       propertyPath: m_Name
       value: Boba (2)
