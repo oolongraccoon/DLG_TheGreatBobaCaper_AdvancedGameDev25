@@ -1,23 +1,55 @@
-using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<ItemData> items = new List<ItemData>();
 
-    public void AddItem(ItemData item)
+    #region Singleton
+
+    public static Inventory instance;
+
+    void Awake()
     {
-        if (item == null) return;
-
-        // Check if item already exists in inventory (by comparing ItemData objects)
-        if (items.Contains(item))
+        if (instance != null)
         {
-            Debug.Log("Item already exists in inventory: " + item.itemName);
-            return; // or handle increasing quantity if applicable
+            Debug.LogWarning("More than one instance of Inventory found!");
+            return;
         }
 
-        items.Add(item);
-        Debug.Log("Added item: " + item.itemName);
-
+        instance = this;
     }
+
+    #endregion
+    // Callback when an item gets added/removed
+
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback;
+
+    public int space = 20;  // Amount of slots
+
+    // Current list
+    public List<ItemData> items = new List<ItemData>();
+
+    public bool Add(ItemData item)
+    {
+        // Don't do anything if it's a default item
+        if (!item.isDefaultItem)
+        {
+            if (items.Count >= space)
+            {
+                Debug.Log("Not enough room.");
+                return false;
+            }
+
+            items.Add(item);    // Add item
+
+            // Trigger callback
+            if (onItemChangedCallback != null)
+                onItemChangedCallback.Invoke();
+        }
+
+        return true;
+    }
+
 }

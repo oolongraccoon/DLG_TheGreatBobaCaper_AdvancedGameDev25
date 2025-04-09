@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class Collector : MonoBehaviour
 {
-    private Inventory inventory;
+    public Inventory inventory;  // Make this public so you can assign it in the Inspector
 
     private void Start()
     {
-        inventory = GetComponent<Inventory>();
+        if (inventory == null)
+        {
+            inventory = GameObject.FindObjectOfType<Inventory>();  // Find the Inventory if it's not assigned
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,7 +20,7 @@ public class Collector : MonoBehaviour
             ItemData data = item.Collect();
             if (data != null)
             {
-                inventory.AddItem(data);
+                inventory.Add(data);
             }
         }
     }
