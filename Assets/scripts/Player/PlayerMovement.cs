@@ -1,82 +1,55 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    [Header("Movement")]
-    public float moveSpeed = 5f;
-    float horizontalMovement;
 
-    [Header("Jumping")]
-    public float jumpPower = 10f;
-    public int maxJumps = 2; //double jump
-    int jumpRemaining;
+    #region Singleton
 
-    [Header("GroundCheck")]
-    public Transform groundCheckPos;
-    public Vector2 groundCheckSize = new Vector2(0.5f, 0.05f);
-    public LayerMask groundLayer;
+    public static Inventory instance;
 
-    [Header("Gravity")]
-    public float baseGravity = 1f;
-    public float maxFallSpeed = 18f;
-    public float fallSpeedMultiplier = 2f;
-
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        rb.velocity = new Vector2(horizontalMovement * moveSpeed, rb.velocity.y);
-        GroundCheck();
-        Gravity();
-    }
-    private void Gravity()
-    {
-        if (rb.velocity.y < 0)
+        if (instance != null)
         {
-            rb.gravityScale = baseGravity * fallSpeedMultiplier; // fall increasingly faster
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -maxFallSpeed));
+            Debug.LogWarning("More than one instance of Inventory found!");
+            return;
         }
-        else
-        {
-            rb.gravityScale = baseGravity;
-        }
-    }
-    public void Move(InputAction.CallbackContext context)
-    {
-        horizontalMovement = context.ReadValue<Vector2>().x;
+
+        instance = this;
     }
 
-    public void Jump(InputAction.CallbackContext context)
+    #endregion
+    // Callback when an item gets added/removed
+
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback;
+
+    public int space = 20;  // Amount of slots
+
+    // Current list
+    public List<ItemData> items = new List<ItemData>();
+
+    public bool Add(ItemData item)
     {
-        if (jumpRemaining > 0)
+        // Don't do anything if it's a default item
+        if (!item.isDefaultItem)
         {
-            if (context.performed)
-            {   //big jump
-                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-                jumpRemaining--;
-            }
-            else if (context.canceled)
+            if (items.Count >= space)
             {
-                //light jump
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-                jumpRemaining--;
+                Debug.Log("Not enough room.");
+                return false;
             }
+
+            items.Add(item);    // Add item
+
+            // Trigger callback
+            if (onItemChangedCallback != null)
+                onItemChangedCallback.Invoke();
         }
 
+        return true;
     }
-    private void GroundCheck()
-    {
-        if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer))
-        {
-            jumpRemaining = maxJumps;
-        }
- 
-    }
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawCube(groundCheckPos.position, groundCheckSize);
-    }
+
 }
