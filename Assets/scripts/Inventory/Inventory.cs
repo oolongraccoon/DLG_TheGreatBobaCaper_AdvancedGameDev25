@@ -34,6 +34,7 @@ public class Inventory : MonoBehaviour
     public bool Add(ItemData item)
     {
         // Don't do anything if it's a default item
+        Debug.Log("??????");
         if (!item.isDefaultItem)
         {
             if (items.Count >= space)
