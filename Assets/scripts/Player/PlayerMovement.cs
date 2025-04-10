@@ -1,27 +1,55 @@
-  using System.Runtime.CompilerServices;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{ [SerializeField]private float speed;
-    private Rigidbody2D body;
+public class Inventory : MonoBehaviour
+{
 
-    private void Awake()
+    #region Singleton
+
+    public static Inventory instance;
+
+    void Awake()
     {
-      body = GetComponent<Rigidbody2D>();
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of Inventory found!");
+            return;
+        }
+
+        instance = this;
     }
-    private void Update()
+
+    #endregion
+    // Callback when an item gets added/removed
+
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback;
+
+    public int space = 20;  // Amount of slots
+
+    // Current list
+    public List<ItemData> items = new List<ItemData>();
+
+    public bool Add(ItemData item)
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+        // Don't do anything if it's a default item
+        if (!item.isDefaultItem)
+        {
+            if (items.Count >= space)
+            {
+                Debug.Log("Not enough room.");
+                return false;
+            }
 
-        //Flip Player when moving left * right
-        if (horizontalInput > 0.01f)
-            transform.localScale = Vector3.one;
-        else if (horizontalInput < -0.01f)
-            transform.localScale = new Vector3(-1,1,1);
+            items.Add(item);    // Add item
 
-        if (Input.GetKey(KeyCode.Space))
-        body.velocity = new Vector2(body.velocity.x,speed);
+            // Trigger callback
+            if (onItemChangedCallback != null)
+                onItemChangedCallback.Invoke();
+        }
 
+        return true;
     }
-}   
+
+}
