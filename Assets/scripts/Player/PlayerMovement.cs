@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
+    private static PlayerMovement instance;
     bool isFacingRight = true;
     [Header("Movement")]
     public float moveSpeed = 5f;
@@ -147,4 +148,6 @@ public class PlayerMovement : MonoBehaviour
         // Restore original Gizmos matrix
         Gizmos.matrix = oldMatrix;
     }
+
+
 }
