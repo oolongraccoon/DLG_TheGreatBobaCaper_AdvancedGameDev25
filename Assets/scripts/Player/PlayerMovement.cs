@@ -43,6 +43,12 @@ public class PlayerMovement : MonoBehaviour
         ProcessWallSlide();
         Gravity();
         Flip();
+        // debug
+        if (isWallSliding)
+        {
+            Debug.Log("Player is sliding on the wall.");
+       
+        }
     }
     private void Gravity()
     {
