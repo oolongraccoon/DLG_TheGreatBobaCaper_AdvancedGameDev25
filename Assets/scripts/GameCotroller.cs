@@ -25,7 +25,14 @@ public class GameCotroller : MonoBehaviour
     }
     void LoadNextLevel()
     {
-        LevelManagerPersist.instance.LoadLevel("SecondScene");
+        if (progressAmount >= 4)
+        {
+            LevelManagerPersist.instance.LoadLevel("SecondScene");
+        }
+        else
+        {
+            Debug.Log("Not enough progress yet!");
+        }
     }
 
 }
