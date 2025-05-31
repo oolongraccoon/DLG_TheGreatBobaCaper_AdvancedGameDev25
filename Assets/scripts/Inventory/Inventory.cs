@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 
-    public int space = 20;  // Amount of slots
+    public int space = 6;  // Amount of slots
 
     // Current list
     public List<ItemData> items = new List<ItemData>();
@@ -34,7 +34,6 @@ public class Inventory : MonoBehaviour
     public bool Add(ItemData item)
     {
         // Don't do anything if it's a default item
-        Debug.Log("??????");
         if (!item.isDefaultItem)
         {
             if (items.Count >= space)

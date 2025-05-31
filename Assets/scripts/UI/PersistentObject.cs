@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class PersistentUI : MonoBehaviour
+public class PersistentObject : MonoBehaviour
 {
-    private static PersistentUI instance;
+    private static PersistentObject instance;
 
     void Awake()
     {
