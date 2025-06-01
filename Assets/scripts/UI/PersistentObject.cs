@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PersistentObject : MonoBehaviour
 {
@@ -10,10 +11,29 @@ public class PersistentObject : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject); // Keeps this object between scenes
+
+            // Subscribe to scene load event
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
             Destroy(gameObject); // Ensures only one instance exists
         }
     }
+    // This method is called every time a new scene loads
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Destroy this object if the scene is GameOverScene
+        if (scene.name == "GameOverScene")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnDestroy()
+    {
+        // Unsubscribe from the event to prevent memory leaks
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
 }
