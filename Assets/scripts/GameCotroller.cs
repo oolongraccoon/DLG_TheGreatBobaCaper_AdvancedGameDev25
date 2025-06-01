@@ -6,8 +6,8 @@ using Persisting;
 public class GameCotroller : MonoBehaviour
 {
     public Inventory inventory;
-    int progressAmount;
- 
+    int progressAmount; // Tracks the player's progress in the current level
+
     void Start()
     {
         progressAmount = 0;
