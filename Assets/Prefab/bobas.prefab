@@ -1,0 +1,460 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8488815125595030588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6147219251177851373}
+  m_Layer: 0
+  m_Name: bobas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6147219251177851373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8488815125595030588}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1044738283985401829}
+  - {fileID: 9140252795521989056}
+  - {fileID: 5227549277228788609}
+  - {fileID: 8757783975794821212}
+  - {fileID: 3910853943570879150}
+  - {fileID: 7896950701024242528}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &649388609361843228
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6147219251177851373}
+    m_Modifications:
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: itemData
+      value: 
+      objectReference: {fileID: 11400000, guid: 39c680b05f765b14fbbb8b496e65dfd2, type: 2}
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: pickupMonologue
+      value: "Brown sugar \u2014 the sweet, caramel soul of boba!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722165935455833458, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_Name
+      value: Boba_BrownSugar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -963.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -74.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+--- !u!4 &9140252795521989056 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+  m_PrefabInstance: {fileID: 649388609361843228}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1031959980509668736
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6147219251177851373}
+    m_Modifications:
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: itemData
+      value: 
+      objectReference: {fileID: 11400000, guid: a0f9f8c570c13814f9841eb88bc22e70, type: 2}
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: pickupMonologue
+      value: "Matcha \u2014 ancient, earthy, and energizing"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722165935455833458, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_Name
+      value: Boba_Matcha
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -958.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -74.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+--- !u!4 &8757783975794821212 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+  m_PrefabInstance: {fileID: 1031959980509668736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1894958610370987708
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6147219251177851373}
+    m_Modifications:
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: itemData
+      value: 
+      objectReference: {fileID: 11400000, guid: a0f9f8c570c13814f9841eb88bc22e70, type: 2}
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: pickupMonologue
+      value: "Milk \u2014 the heart of the creaminess. Essential!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722165935455833458, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_Name
+      value: Boba_Milk
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -951.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -70.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+--- !u!4 &7896950701024242528 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+  m_PrefabInstance: {fileID: 1894958610370987708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4562243577362187869
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6147219251177851373}
+    m_Modifications:
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: itemData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c241e1d87c47304c83cb62d93ef08d7, type: 2}
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: pickupMonologue
+      value: "Chocolate \u2014 decadent and bold. Boba royalty!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722165935455833458, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_Name
+      value: Boba_Chocolate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -960.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -76.89343
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+--- !u!4 &5227549277228788609 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+  m_PrefabInstance: {fileID: 4562243577362187869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4728076962937126770
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6147219251177851373}
+    m_Modifications:
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: itemData
+      value: 
+      objectReference: {fileID: 11400000, guid: a0f9f8c570c13814f9841eb88bc22e70, type: 2}
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: pickupMonologue
+      value: "Green tea \u2014 Clarity sharp as glass \u2014 brewed from patience
+        and storm"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722165935455833458, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_Name
+      value: Boba_GreanTea
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -955.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -74.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+--- !u!4 &3910853943570879150 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+  m_PrefabInstance: {fileID: 4728076962937126770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8765135093096913465
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6147219251177851373}
+    m_Modifications:
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: itemData
+      value: 
+      objectReference: {fileID: 11400000, guid: c73f688e3f84c3548972bf0b40c8ae1e, type: 2}
+    - target: {fileID: 5257377311796590464, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: pickupMonologue
+      value: "Tapioca pearls \u2014 chewy, rich, and absolutely essential"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722165935455833458, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_Name
+      value: Boba _Topioca
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -967.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -76.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+--- !u!4 &1044738283985401829 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8636677040728796636, guid: 4a3492099ef348b4f9b66ae70bd25582, type: 3}
+  m_PrefabInstance: {fileID: 8765135093096913465}
+  m_PrefabAsset: {fileID: 0}

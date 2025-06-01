@@ -20,9 +20,9 @@ public class PlayerHealth : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Enemy enemy = collision.GetComponent<Enemy>();
+        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
         if (enemy)
         {
             TakeDamage(enemy.damage);
@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(FlashRed());
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("GameOverScene");
+            GameOverManager.instance.TriggerGameOver();
         }
     }
     private IEnumerator FlashRed()
