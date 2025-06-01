@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
         if (isGrounded)
         {
             // chase player
-            rb.velocity = new Vector2(direction * chaseSpeed, rb.velocity.y);
+            rb.linearVelocity = new Vector2(direction * chaseSpeed, rb.linearVelocity.y);
 
             // if grounded
             RaycastHit2D groundInFront = Physics2D.Raycast(transform.position, new Vector2(direction, 0), 2f, groundLayer);
@@ -66,4 +66,12 @@ public class Enemy : MonoBehaviour
             rb.AddForce(new Vector2(jumpDirection.x, jumpForce), ForceMode2D.Impulse);
         }
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameOverManager.instance.TriggerGameOver("You were caught by the dog!");
+        }
+    }
+
 }

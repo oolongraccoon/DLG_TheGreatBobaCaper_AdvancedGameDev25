@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         if (!isGrounded & WallCheck() & horizontalMovement != 0)
         {
             isWallSliding = true;
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -wallSlideSpeed));
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, -wallSlideSpeed));
         }
         else
         {
