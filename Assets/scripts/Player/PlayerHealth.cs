@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -33,9 +34,9 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
         healthUI.UpdateHearts(currentHealth);
         StartCoroutine(FlashRed());
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
-            // Player dead - call GameOver
+            SceneManager.LoadScene("GameOverScene");
         }
     }
     private IEnumerator FlashRed()

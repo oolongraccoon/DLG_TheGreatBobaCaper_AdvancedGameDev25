@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverScene : MonoBehaviour
+public class StartMenuController : MonoBehaviour
 {
     public string gameSceneName = "FirstScene";
+
+    public GameObject howToPlayPanel;
+
     public void StartGame()
     {
-
-        // Restart the game
         SceneManager.LoadScene(gameSceneName);
     }
 
-    public void Setting()
+    public void HowToPlay()
     {
+        howToPlayPanel.SetActive(true);
+    }
 
-
+    public void CloseHowToPlay()
+    {
+        howToPlayPanel.SetActive(false);
     }
 }
 
