@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(FlashRed());
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("GameOverScene");
+            GameOverManager.instance.TriggerGameOver();
         }
     }
     private IEnumerator FlashRed()

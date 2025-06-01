@@ -6,15 +6,15 @@ public class Boba : MonoBehaviour, IItem
     public ItemData itemData;
     public static event Action<int> OnBobaCollect; // Event triggered when a Boba is collected
     public int worth = 1;
-    private bool isCollected = false; // Prevent double collection
-
+    public string pickupMonologue;
+    private bool isCollected = false;
 
     public ItemData Collect()
     {
-        if (isCollected) return null; 
-        isCollected = true; // Mark this item as collected
+        if (isCollected) return null;
+        isCollected = true;// Mark this item as collected
 
-        ItemData dataToReturn = itemData; // Store the item data to return later
+        ItemData dataToReturn = itemData;//Store the item data to return later
 
         bool added = Inventory.instance.Add(itemData);
         if (!added)
@@ -23,8 +23,16 @@ public class Boba : MonoBehaviour, IItem
             return null;
         }
 
-        OnBobaCollect?.Invoke(worth); // Trigger the Boba collection event and send its worth
-        Destroy(gameObject); // object is safe to destroy AFTER data is saved
+        OnBobaCollect?.Invoke(worth);//Trigger the Boba collection event and send its worth
+
+        // Show monologue
+        if (!string.IsNullOrEmpty(pickupMonologue))
+        {
+            MonologueManager.instance.ShowMonologue(pickupMonologue);
+        }
+
+        Destroy(gameObject); // // object is safe to destroy AFTER data is saved
+
         return dataToReturn;
     }
 }
