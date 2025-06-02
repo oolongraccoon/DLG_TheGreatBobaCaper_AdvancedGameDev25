@@ -412,11 +412,11 @@ MonoBehaviour:
     Controls:
 
     Move:
-    Use W A S D or Arrow Keys
+    Use W D or Arrow Keys to walk, space to jump
 
 
-    Interact: Press E to go to the next level (only
-    after collecting enough bobas)'
+    Interact: Press E to go to
+    the next level (only after collecting all the bobas)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -23,8 +23,8 @@ public class PersistentObject : MonoBehaviour
     // This method is called every time a new scene loads
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Destroy this object if the scene is GameOverScene
-        if (scene.name == "GameOverScene")
+        // Destroy this object if the scene is GameStartMenu
+        if (scene.name == "GameStartMenu")
         {
             Destroy(gameObject);
         }

@@ -28,7 +28,7 @@ public class Inventory : MonoBehaviour
 
     public int space = 6;  // Amount of slots
 
-    // Current list
+    // List to store the current items held by the inventory.
     public List<ItemData> items = new List<ItemData>();
 
     public bool Add(ItemData item)
