@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
             //Detect if there is a platform above the enemy within 3 units
             RaycastHit2D platFormAbove = Physics2D.Raycast(transform.position, Vector2.up, 3f, groundLayer);
 
-            if (!groundInFront.collider && !gapAhead.collider)
+            if (!groundInFront.collider && !gapAhead.collider) // If no ground in front and no ground below in front (gap) -> should jump
             {
                 shouldJump = true;
             }
@@ -62,12 +62,12 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isGrounded && shouldJump)
+        if (isGrounded && shouldJump)// Only jump if enemy is grounded and shouldJump flag is set
         {
             shouldJump = false;
             Vector2 direction = (player.position - transform.position).normalized;
             Vector2 jumpDirection = direction * jumpForce;
-            rb.AddForce(new Vector2(jumpDirection.x, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(jumpDirection.x, jumpForce), ForceMode2D.Impulse);// Apply impulse force to enemy Rigidbody to make it jump towards the player
         }
     }
     void OnCollisionEnter2D(Collision2D collision)

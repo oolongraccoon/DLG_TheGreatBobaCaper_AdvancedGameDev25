@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class HealthUI : MonoBehaviour
 {
-    public Image heartImage;
+    public Image heartImage; // heart prefab
     public Sprite fullHeartSprite;
-    public Sprite emptyHeartSprite;
+    public Sprite emptyHeartSprite;// lost hearts
 
-    private List<Image> hearts = new List<Image>();
+    private List<Image> hearts = new List<Image>();// List to keep track of instantiated heart images
+
 
     public void SetMaxHearts(int maxHearts)
     {
@@ -20,7 +21,7 @@ public class HealthUI : MonoBehaviour
 
         hearts.Clear();
 
-        for (int i = 0; i < maxHearts; i++)
+        for (int i = 0; i < maxHearts; i++)// Create new heart UI elements equal to maxHearts
         {
             Image newHeart = Instantiate(heartImage, transform);
             newHeart.sprite = fullHeartSprite;
@@ -29,13 +30,13 @@ public class HealthUI : MonoBehaviour
         }
     }
 
-    public void UpdateHearts(int currentHealth)
+    public void UpdateHearts(int currentHealth) // Updates the heart display based on current health 
     {
         for (int i = 0; i < hearts.Count; i++)
         {
             if (i < currentHealth)
             {
-                hearts[i].sprite = fullHeartSprite;
+                hearts[i].sprite = fullHeartSprite; // For hearts within the current health, show full red heart
                 hearts[i].color = Color.red;
             }
             else

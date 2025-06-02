@@ -3,11 +3,13 @@ using System;
 
 public class Boba : MonoBehaviour, IItem
 {
-    public ItemData itemData;
-    public static event Action<int> OnBobaCollect;
+
+    public ItemData itemData;//boba data
+    public static event Action<int> OnBobaCollect; // Event triggered when a Boba is collected
+
     public int worth = 1;
     public string pickupMonologue;
-    private bool isCollected = false;
+    private bool isCollected = false; //prevent multiple collections of the same item
 
     public ItemData Collect()
     {
@@ -17,7 +19,7 @@ public class Boba : MonoBehaviour, IItem
 
         ItemData dataToReturn = itemData;//Store the item data to return later
 
-        bool added = Inventory.instance.Add(itemData);
+        bool added = Inventory.instance.Add(itemData); //add to player's inventory
         if (!added)
         {
             Debug.Log("Inventory is full! Item not collected.");

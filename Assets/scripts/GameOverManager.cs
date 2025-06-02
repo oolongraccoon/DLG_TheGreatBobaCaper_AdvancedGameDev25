@@ -36,10 +36,24 @@ public class GameOverManager : MonoBehaviour
         Time.timeScale = 0f; // Pause game
     }
 
+    public void TriggerWin(string message = "You Win!")
+    {
+        StartCoroutine(WinSequence(message));
+    }
+
+    private IEnumerator WinSequence(string msg)
+    {
+        caughtMessageText.text = ""; 
+        gameOverText.text = msg;
+        gameOverPanel.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.2f);
+        Time.timeScale = 0f;// Pause the game
+    }
 
     public void RestartScene()
     {
         Time.timeScale = 1f;
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("GameStartMenu");
 
     }

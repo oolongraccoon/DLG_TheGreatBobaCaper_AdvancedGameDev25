@@ -10,19 +10,19 @@ public class PlayerHealth : MonoBehaviour
 
     public HealthUI healthUI;
 
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;// Used to flash the player sprite red when damaged
 
     void Start()
     {
         currentHealth = maxHealth;
         healthUI.SetMaxHearts(maxHealth);
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();// Get sprite renderer component for color changes
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+        Enemy enemy = collision.gameObject.GetComponent<Enemy>();// Check if collided object has an Enemy component
         if (enemy)
         {
             TakeDamage(enemy.damage);
@@ -32,17 +32,17 @@ public class PlayerHealth : MonoBehaviour
     private void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthUI.UpdateHearts(currentHealth);
-        StartCoroutine(FlashRed());
+        healthUI.UpdateHearts(currentHealth);// Update the UI to reflect new health
+        StartCoroutine(FlashRed());// Flash the player red to show damage visually
         if (currentHealth <= 0)
         {
-            GameOverManager.instance.TriggerGameOver();
+            GameOverManager.instance.TriggerGameOver(); // Trigger game over
         }
     }
     private IEnumerator FlashRed()
     {
-        spriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = Color.white;
+        spriteRenderer.color = Color.red;// Change sprite color to red
+        yield return new WaitForSeconds(0.1f);// Wait for 0.1 seconds
+        spriteRenderer.color = Color.white;// Revert color back to white
     }
 }

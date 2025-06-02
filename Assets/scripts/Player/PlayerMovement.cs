@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     private static PlayerMovement instance;
     bool isFacingRight = true;
+
     [Header("Movement")]
     public float moveSpeed = 5f;
     float horizontalMovement;
@@ -16,8 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public int maxJumps = 2; //double jump
     int jumpRemaining;
 
-    [Header("GroundCheck")]
-    public Transform groundCheckPos;
+    [Header("GroundCheck")]//check if player is grounded
+    public Transform groundCheckPos; 
     public Vector2 groundCheckSize = new Vector2(0.5f, 0.05f);
     public LayerMask groundLayer;
     bool isGrounded;
@@ -27,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxFallSpeed = 18f;
     public float fallSpeedMultiplier = 2f;
 
-    [Header("WallCheck")]
+    [Header("WallCheck")]//check for walls that is infront of the player
     public Transform wallCheckPos;
     public Vector2 wallCheckSize = new Vector2(0.5f, 0.05f);
     public LayerMask wallLayer;
@@ -86,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
- 
+    // Detect if player is standing on ground using a box overlap check
     private void GroundCheck()
     {
         if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer))
@@ -100,10 +101,12 @@ public class PlayerMovement : MonoBehaviour
         }
  
     }
+    // Check if player is touching a wall (for sliding)
     private bool WallCheck()
     {
         return Physics2D.OverlapBox(wallCheckPos.position, wallCheckSize, 0, wallLayer);
     }
+    // Flip player sprite horizontally when changing movement direction
     private void Flip()
     {
         if(isFacingRight && horizontalMovement < 0 || !isFacingRight && horizontalMovement > 0)
@@ -128,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+    // Visualize ground and wall check areas
     private void OnDrawGizmosSelected()
     {
         //ground check visual
