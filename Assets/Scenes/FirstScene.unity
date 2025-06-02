@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 677919553174784242, guid: b474be63cfbdfea4bbc76646849c3f9f, type: 3}
+      propertyPath: itemData
+      value: 
+      objectReference: {fileID: 11400000, guid: c73f688e3f84c3548972bf0b40c8ae1e, type: 2}
     - target: {fileID: 1044738283985401829, guid: b474be63cfbdfea4bbc76646849c3f9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -968.36
@@ -154,6 +158,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -76.66
       objectReference: {fileID: 0}
+    - target: {fileID: 5961017818927231292, guid: b474be63cfbdfea4bbc76646849c3f9f, type: 3}
+      propertyPath: itemData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d1e06fa497defd488e9210240352eb8, type: 2}
     - target: {fileID: 6147219251177851373, guid: b474be63cfbdfea4bbc76646849c3f9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 960
@@ -774,6 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054f8ca99c03c7542ba31059200e567e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!4 &135911500
 Transform:
   m_ObjectHideFlags: 0
