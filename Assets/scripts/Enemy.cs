@@ -70,4 +70,12 @@ public class Enemy : MonoBehaviour
             rb.AddForce(new Vector2(jumpDirection.x, jumpForce), ForceMode2D.Impulse);// Apply impulse force to enemy Rigidbody to make it jump towards the player
         }
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameOverManager.instance.TriggerGameOver("You were caught by the dog!");
+        }
+    }
+
 }

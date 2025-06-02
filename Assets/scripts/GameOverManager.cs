@@ -55,5 +55,6 @@ public class GameOverManager : MonoBehaviour
         Time.timeScale = 1f;
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("GameStartMenu");
+
     }
 }
