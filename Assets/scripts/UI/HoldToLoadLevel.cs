@@ -10,22 +10,22 @@ public class HoldToLoadLevel : MonoBehaviour
 {
     [Header("Settings")]
     public float holdDuration = 1f;//how long we hold down for
-    private float holdTimer = 0;
+    private float holdTimer = 0;// Tracks how long the button has been held
     private bool isHolding = false;
 
     [Header("UI")]
     public Image fillCircle; 
 
-    public static event Action OnHoldComplete;
+    public static event Action OnHoldComplete;// Event triggered when hold is completed successfully
 
     void Update()
     {
         if (isHolding)
         {
-            holdTimer += Time.deltaTime;
-            fillCircle.fillAmount = holdTimer / holdDuration;
+            holdTimer += Time.deltaTime;// Increment timer by the time passed since last frame
+            fillCircle.fillAmount = holdTimer / holdDuration;// Update UI circle fill based on progress
 
-            if (holdTimer >= holdDuration)
+            if (holdTimer >= holdDuration)// Check if player held the button long enough
             {
                 OnHoldComplete.Invoke();
                 ResetHold();

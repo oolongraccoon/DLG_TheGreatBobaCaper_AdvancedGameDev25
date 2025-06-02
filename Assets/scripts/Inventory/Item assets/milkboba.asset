@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d036ac53fbd65346b63f2d271ad90b5, type: 3}
-  m_Name: New Item Data
+  m_Name: milkboba
   m_EditorClassIdentifier: 
-  itemName: testitem
-  icon: {fileID: 1251888990, guid: fffef6a0612ef9146a46b734e9a7b62a, type: 3}
-  isDefaultItem: 0
+  itemName: milkboba
+  icon: {fileID: 1750440, guid: fffef6a0612ef9146a46b734e9a7b62a, type: 3}

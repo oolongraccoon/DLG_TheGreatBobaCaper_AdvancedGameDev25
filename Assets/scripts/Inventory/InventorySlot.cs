@@ -8,7 +8,7 @@ public class InventorySlot : MonoBehaviour
 
     ItemData item;  // Current item
 
-    public void AddItem(ItemData newItem)
+    public void AddItem(ItemData newItem) //add item UI
     {
         item = newItem;
         icon.sprite = item.icon;
